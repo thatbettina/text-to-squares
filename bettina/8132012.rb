@@ -6,6 +6,16 @@ class Switch
   def state
     @state
   end
+  
+  def flip
+    if @state == :off
+      @state = :on
+    else
+      @state = :off
+    end
+    
+    @state = ((@state == :off ?) :on : :off)
+  end
 end
 
 switch = Switch.new(:off)
@@ -16,4 +26,4 @@ else
 end
 
 # set internal state of the switch to :on
-switch
+switch.flip
