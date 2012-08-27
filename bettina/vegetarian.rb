@@ -1,3 +1,5 @@
+require 'test/unit'
+
 class Animal
   
   def initialize(name)
@@ -8,7 +10,7 @@ end
 
 class Vegan < Animal
   def eat(food)
-    if food == :vegetarian
+    if food ==:vegetarian
       puts 'yummy!'
     else
       puts "Sorry, I'm vegetarian"
@@ -22,7 +24,7 @@ end
 
 class Butcher < Animal
   def eat(food)
-    if food !== :vegetarian
+    if food !=:vegetarian
     puts 'yummy!'
     else
     puts "Where's the meat?"
@@ -45,13 +47,13 @@ end
 
 m = Butcher.new("M")
 bettina = Vegan.new("bettina")
-food = 
+food = Food.new
 
 bettina.eat(food)
 m.eat(bettina)
 
 class AnimalTest < Test::Unit::TestCase
-    def test_name
+  def test_name
     bettina = Animal.new("Bettina")
     assert bettina.name, 'create a new animal named Bettina'
   end
@@ -65,14 +67,14 @@ class VeganTest < Test::Unit::TestCase
   
   def test_eat
     bettina = Vegan.new("Bettina")
-    if food == :vegetarian
+    if food ==:vegetarian
       assert bettina.eats, "bettina eats vegetarian food"
     end
   end
   
   def test_zombify
     bettina = Vegan.new("Bettina")
-    if status == :slaughtered
+    if status ==:slaughtered
       assert bettina.zombify, "Bettina becomes a zombie after being slaughtered!"
     end
   end
@@ -86,7 +88,7 @@ class ButcherTest < Test::Unit::TestCase
 
   def test_eat
     m = Butcher.new("m")
-    if food !== :vegetarian
+    if food !=:vegetarian
       assert m.eats, "m eats meat"
     end   
   end
