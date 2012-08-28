@@ -21,8 +21,6 @@
 #aaaaaa bbbbbb cccccc
 #etc.
 
-#second goal : turn this into an actual web page using those css colors
-
 #Application
 #  - normalizes the string (strip off characters, downcase) before creating squares
 #  - creates a picture instance with that string
@@ -38,6 +36,17 @@
 #- has a color
 #  - has a fixed size
 
+class Square
+  def initialize(color, size)
+end
 
+class Picture
+  
+end
 
-
+class Application
+  puts "Tell me your secret..."
+  secret = gets.chomp.delete("^a-zA-Z").downcase!
+  puts secret
+  end
+end
