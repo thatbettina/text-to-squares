@@ -120,6 +120,10 @@ class Animal
     [:zombie].include?(persuasion)
   end
   
+  def self.vegan?(persuasion)
+    not [:meaty, :cheesy, :zombie].include?(persuasion)
+  end
+  
   attr_reader :persuasions
   
   def initialize(persuasions)
@@ -131,7 +135,7 @@ class Animal
   end
   
   def vegan?
-    persuasions.all?{|persuasion| animal.vegan?(persuasion)}
+    persuasions.all?{|persuasion| self.class.vegan?(persuasion)}
   end
 end
 
