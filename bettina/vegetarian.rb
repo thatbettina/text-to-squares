@@ -123,6 +123,21 @@ class Animal
   end
 end
 
+class Waffle
+  attr_reader :ingredients
+  
+  def initialize(ingredients)
+    @ingredients = ingredients
+  end
+  
+  def vegan?
+    ingredients.all?{}
+      end
+  end
+  
+end
+
+
 class AnimalTest < Test::Unit::TestCase
   
   def test_Animal_passed_meaty_should_not_be_vegan
