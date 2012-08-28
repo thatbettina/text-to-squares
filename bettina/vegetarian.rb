@@ -100,12 +100,24 @@
 #  end
 #end
 
+# A vegan Animal eats a leaf
+# A vegan Animal politefully refuses to eat meat and delivers a tirade about animal liberation
+# A butcher happily eats that meat
+# A vegan Animal becomes a zombie
+# A zombie (ex-vegan?) Animal eats the butcher
 
+# Candidates for classes:
+#  
+# Vegan
+# Butcher
+# Food
+# Zombie
+  
 require 'test/unit'
 
 class Animal
-  def self.vegan?(persuasion)
-    not [:meaty, :cheesy, :zombie].include?(persuasion)
+  def self.zombie?(persuasion)
+    [:zombie].include?(persuasion)
   end
   
   attr_reader :persuasions
@@ -119,35 +131,22 @@ class Animal
   end
   
   def vegan?
-    persuasions.all?{|persuasion| self.class.vegan?(persuasion)}
+    persuasions.all?{|persuasion| animal.vegan?(persuasion)}
   end
 end
 
-class Waffle
-  attr_reader :ingredients
-  
-  def initialize(ingredients)
-    @ingredients = ingredients
-  end
-  
-  def vegan?
-    ingredients.all?{}
-      end
-  end
-  
-end
 
 
 class AnimalTest < Test::Unit::TestCase
   
-  def test_Animal_passed_meaty_should_not_be_vegan
-    Animal.vegan?([:meaty])
-    assert Animal, 'should not be vegan'
+  def test_Animal_passed_meaty_should_not_be_a_zombie
+    Animal.zombie?([:meaty])
+    assert Animal, 'should not be zombie'
   end
   
-  def test_Animal_passed_leafy_should_be_vegan
-    Animal.vegan?([:leafy])
-    assert Animal, 'should be vegan'
+  def test_Animal_passed_zombie_should_be_a_zombie
+    Animal.zombie?([:zombie])
+    assert Animal, 'should be a zombie!'
   end
   
   def test_creation
