@@ -1,11 +1,9 @@
 class Photo
-
   def initialize(location, timestamp, resize)
     #location and time automatically added and resized to thumbnail sqaure
   end
 
 class User
-
   def initialize(name)
     #default name is a number 
   end
