@@ -47,15 +47,26 @@ attr_reader :size
 end
 
 class Picture
-  def initialize (string, row, columns)
+  def initialize(string)
+    @string = string
+    @stringlength = string.length
+    
   end
 
-  def color
+  def size
+    Math.sqrt(@stringlength).to_i
+  end
+  
+  def color_hash
     {"a" => "000000", "b" => "F8F8F8", "c" => "101010", "d" => "E8E8E8", "e" => "202020", "f" => "D8D8D8", "g" => "303030", "h" => "383838", "i" => "404040", "j" => "484848", "k" => "505050", "l" => "585858", "m" => "606060", "n" => "686868", "o" => "707070", "p" => "787878", "q" => "808080", "r" => "888888", "s" => "909090", "t" => "989898", "u" => "A0A0A0", "v" => "A8A8A8", "x" => "B0B0B0", "y" => "B8B8B8", "z" => "C0C0C0" }
   end
   
+  def color_of_string
+    @string.gsub(color_hash) do |x|
+    end
+  end
   # generates the squares from the strings like this below?
-  # colors.each do |key, value|
+  # squares = string.each do |letter, hex|
   #  puts key, " is ", value
 end
 
