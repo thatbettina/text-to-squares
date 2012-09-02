@@ -64,10 +64,11 @@ class Picture
     secret = secret.chars.to_a
   end
 
-# loop over all the characters in the string and create a Square instance for each of them
-  def color_of_string
-      #secret = secret.map! {|char| hex}
-    end
+# loop over all the characters in the string and create a new array with the colors
+  def array_of_colors
+      secret.map |letter|
+        hash#{letter}","
+      end
   end
 end
 
