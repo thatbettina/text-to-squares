@@ -66,11 +66,11 @@ class Picture
 
 # loop over all the characters in the string and create a new array with the colors
   def array_of_colors
-      secret.map |letter|
+      secret.map do |letter|
         hash#{letter}","
       end
+    end
   end
-end
 
 class Application
   def run
@@ -87,25 +87,25 @@ end
 
 class PictureTest < Test::Unit::TestCase
   def test_picture_creation
-    string = helloworld
-    picture = Picture.new(string, 2, 5)
+    string = "helloworld"
+    picture = Picture.new(string)
     assert picture, 'creating instance of picture'
   end
 
-  def test_picture_when_passed_2_rows_should_have_two_rows
-    picture = Picture.new(helloworld, 2, 5)
-    #assert
-  end
-
-  def test_picture_when_passed_2_rows_should_not_have_3_rows
-     picture = Picture.new(helloworld, 2, 5)
-    #assert
-  end
-
-  def test_picture_number_of_columns
-    picture = Picture.new(helloworld, 2, 5)
-    #assert
-  end
+  #def test_picture_when_passed_2_rows_should_have_two_rows
+  #  picture = Picture.new("helloworld", 2, 5)
+  #  #assert
+  #end
+  #
+  #def test_picture_when_passed_2_rows_should_not_have_3_rows
+  #   picture = Picture.new("helloworld", 2, 5)
+  #  #assert
+  #end
+  #
+  #def test_picture_number_of_columns
+  #  picture = Picture.new("helloworld", 2, 5)
+  #  #assert
+  #end
 end
 
 #assume that Global can create a new instance of Square
