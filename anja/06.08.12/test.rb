@@ -1,3 +1,4 @@
+
 class Person
 	def initialize(name)
 		@name = name
@@ -29,11 +30,9 @@ class Lamp
 
  	def light_comes_on
  		if @switch.state == :on
-			puts "The lamp in the "# möchte den Raum ansprechen!+ Person.room + "# comes on."
-			@switch.flip
+			puts "The light in the " +  @room + " comes_on"
 		elsif @switch.state == :off
 			puts "The Light was already on. You turned it off."
-			@switch.flip
 		else
 			puts "Nothing works"
 		end
@@ -46,7 +45,7 @@ class Switch
   end
 
   def state           #expose the variable to external world
-    @state ||= :off            #attribute reader
+    @state            #attribute reader
   end
 
   def flip
@@ -61,4 +60,12 @@ end
 
 Anja = Person.new("Anja")
 Anja.enter_room
+
+
+
+
+
+Anja = Person.new("Anja")
+Anja.enter_room
+Anja.room
  
