@@ -43,10 +43,9 @@ class Application
     picture.squares
   end
 
-  def render(template)
-    ERB.new(template).result(binding)
+  def rows
+    # return an array of arrays that contain so and so many squares
   end
-
 end
 
 

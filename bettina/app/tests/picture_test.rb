@@ -1,5 +1,4 @@
-require './test_helper'
-require 'enumerator'
+require 'test_helper'
 
 class PictureTest < Test::Unit::TestCase
   def test_creation
@@ -33,21 +32,16 @@ class PictureTest < Test::Unit::TestCase
   end
 
   def test_rows_returns_an_array_of_arrays_of_squares
-    # picture = Picture.new('something')
-    # assert squares.rows
     # ... so that we can render each row and for each row
     # render an li tag that has the color
   end
 
   def test_rows_returns_an_array_of_picture_size_rows
-    picture = Picture.new('something')
-    assert picture.rows.count == 3, 'it should have 3 rows'
+    # i.e. given that picture.size is 3 it should have 3 rows
   end
 
   def test_rows_returns_an_array_where_the_first_row_contains_picture_size_squares
     # i.e. given that picture.size is 3 the first row should have 3 squares
-    picture = Picture.new('something')
-    assert picture.rows.first.length == 3, 'the first row should have 3 squares'
   end
 end
 

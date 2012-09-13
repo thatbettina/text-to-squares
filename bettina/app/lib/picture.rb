@@ -1,5 +1,4 @@
-require 'mathn'
-require 'enumerator'
+require "mathn"
 
 class Picture
   attr_reader :string
@@ -26,10 +25,8 @@ class Picture
     characters.map { |char| Square.new(char) }
   end
 
-  def rows
-    squares.each_slice(size).to_a
-  end
- 
+  # ... has a method `size` which returns the number of rows and columns of the picture
+  #     as the square root of the total number of characters with any decimal digits cut off
   def size
     Math.sqrt(@string.size).to_i
   end
