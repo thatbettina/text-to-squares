@@ -43,9 +43,9 @@ class Application
     picture.squares
   end
 
-  def render(template)
-    ERB.new(template).result(binding)
-  end
+ # def render(template)
+ #   ERB.new(template).result(binding)
+ # end
 
 end
 

@@ -13,8 +13,11 @@
   </head>
   <body>
     <ol>
-      <% app.squares.each do |square| %>
+    <% rows.each do |row| %>
+      <% row.each do |square| %>
         <li style='background-color:#<%= square.color %>'></li>
+      <% end %>
+      <br>
       <% end %>
     </ol>
   </body>

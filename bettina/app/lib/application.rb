@@ -44,7 +44,14 @@ class Application
   end
 
   def rows
+    squares.each_slice(picture.size).to_a 
     # return an array of arrays that contain so and so many squares
+  end
+  
+  def render
+    template = File.read('lib/template.html.erb')
+    erb = ERB.new(template)
+    html = erb.result(binding)
   end
 end
 

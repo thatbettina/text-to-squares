@@ -13,6 +13,8 @@
   </head>
   <body>
     <ol>
+      # make it so that the html output is an ordered list of rows where each row is an ordered list of squares. the template would loop over the rows and output another (nested) ol element where you then loop over all the squares in that row. 
+
       <% app.squares.each do |square| %>
         <li style='background-color:#<%= square.color %>'></li>
       <% end %>

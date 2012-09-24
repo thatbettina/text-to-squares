@@ -14,7 +14,7 @@ app = Application.new(string)
 # erb = ERB.new(template)
 # html = erb.result(binding)
 
-html = app.render
+# html = app.render
 
 File.open('index.html', 'w') { |file| file.puts(html) }
 

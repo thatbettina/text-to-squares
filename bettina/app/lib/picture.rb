@@ -24,7 +24,11 @@ class Picture
   def squares
     characters.map { |char| Square.new(char) }
   end
-
+  
+  def rows
+    squares.each_slice(size).to_a
+  end
+  
   # ... has a method `size` which returns the number of rows and columns of the picture
   #     as the square root of the total number of characters with any decimal digits cut off
   def size
