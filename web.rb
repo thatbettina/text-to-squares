@@ -6,6 +6,8 @@ require 'picture'
 require 'square'
 
 get '/' do
+  erb :template
+  #renders views/index.erb
   "
   <h1>Text to squares</h1>
   <p>Please input a string:</p>
