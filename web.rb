@@ -6,7 +6,7 @@ require 'picture'
 require 'square'
 
 get '/' do
-  erb :template
+  erb :template, :locals => { :rows => application.rows }
   #renders views/index.erb
   "
   <h1>Text to squares</h1>
