@@ -31,7 +31,7 @@ class Text < ActiveRecord::Base
   end
   
   def picture
-    Picture.new(@input)
+    Picture.new(input)
   end
   
   def squares
